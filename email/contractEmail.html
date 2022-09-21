@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html style="margin:0; padding:0;">
+
+<head>
+ 
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <script type="text/javascript" ></script>
+
+    <title>SofTesting - Document To Sign</title>
+</head>
+<style>
+   img {
+       -ms-interpolation-mode:bicubic;
+  }
+ 
+</style>
+<body onload="getMobileOperatingSystem()">
+   
+    <img src= "https://api.softestingca.com/email/image/softesting.jpg" style="width: 100px; height: auto; margin: auto; display: block;" />
+    <h1 style= " color:rgb(93, 44, 209); max-width: 450px; height: 100px; padding:0; 
+        font-size: 1.5rem; font-family: Helvetica, Arial, sans-serif,;margin-top: 30rem;
+        "><strong>S</strong>of<strong>Testing</strong> </h1>
+  
+<p style="margin-top:0rem">Hello {{name}},</p>
+<p> There are documents that require your signature.</p>
+
+<p  style="display:inline-block;"> Please download  </p> 
+<a  style="display:inline-block;" href='https://play.google.com/store/apps/details?id=com.tetraz.capsigo'  target="_blank" rel="noopener noreferrer"> Android Esignature App</a>
+<p  style="display:inline-block;"> or </p>
+<a  style="display:inline-block;" href='https://apps.apple.com/app/capsigo/id1547746310'  target="_blank" rel="noopener noreferrer"> IOS Esignature App</a>
+
+<p> Otherwise, click the link below to sign document in Windows.</p>
+<a href="{{link}}"  target="_blank"  > SofTesting Documents To Sign</a>
+
+<p>Then you will receive a your signed copy via email.</p>
+<p> If you did not initiate this request, please contact us immediately at  </p>
+<a href="">support@softestingca.com</a>
+
+<p>Kind Regards,</p>
+<p>The SofTesting Team</p>
+</body>
+<script> 
+
+
+// $(document).ready(function (){
+//         if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+//             window.location.href = 'https://play.google.com/store/apps/details?id=com.tetraz.capsigo';
+//         }
+//         else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+//             window.location.href = 'https://apps.apple.com/app/capsigo/id1547746310';
+//         }else {
+//             window.location.href = 'https://capsigo.com';
+//         }
+//     });
+
+
+/**
+ * Determine the mobile operating system.
+ * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
+ *
+ * @returns {String}
+ */
+ window.onload = function getMobileOperatingSystem() {
+   
+
+     if (navigator.userAgent.toLowerCase().indexOf("win") != -1) {
+     document.getElementById("ios").style.display="none";
+     document.getElementById("android").style.display='none';
+     document.getElementById("iosLabel").style.display="none";
+     document.getElementById("androidLabel").style.display='none';
+    }
+
+    if (navigator.appVersion.toLowerCase().indexOf("android") != -1) {
+        document.getElementById("ios").style.display="none";
+        document.getElementById("iosLabel").style.display="none";
+    }
+
+    if (navigator.appVersion.toLowerCase().indexOf("ios") != -1) {
+        document.getElementById("android").style.display="none";
+        document.getElementById("androidLabel").style.display="none";
+    }
+   }
+
+
+</script>
+</html>
